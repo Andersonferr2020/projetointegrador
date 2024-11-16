@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exames</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <h1>Exames</h1>
+
+    <!-- Formulário de Adicionar Exame -->
+    <form action="/exames" method="POST" enctype="multipart/form-data">
+        <label for="nome">Nome do Exame:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="tipo">Tipo de Exame:</label>
+        <input type="text" id="tipo" name="tipo" required>
+
+        <label for="data_realizacao">Data de Realização:</label>
+        <input type="date" id="data_realizacao" name="data_realizacao" required>
+
+        <label for="arquivo">Arquivo:</label>
+        <input type="file" id="arquivo" name="arquivo">
+
+        <button type="submit">Adicionar Exame</button>
+    </form>
+
+    <h2>Lista de Exames</h2>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Tipo</th>
+            <th>Data de Realização</th>
+            <th>Arquivo</th>
+        </tr>
+        {% for exame in exames %}
+        <tr>
+            <td>{{ exame.nome }}</td>
+            <td>{{ exame.tipo }}</td>
+            <td>{{ exame.data_realizacao }}</td>
+            <td>
+                {% if exame.arquivo %}
+                    <a href="{{ exame.arquivo }}" target="_blank">Baixar Arquivo</a>
+                {% else %}
+                    Sem Arquivo
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+/* Estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+/* Navbar */
+.navbar {
+  margin-bottom: 20px;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #555 !important;
+}
+
+.navbar-nav .nav-item.active .nav-link {
+  font-weight: bold;
+  color: #4CAF50 !important;
+}
+
+.navbar-toggler {
+  border-color: #4CAF50;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+footer ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  header h1 {
+      font-size: 2rem;
+  }
+
+  header p {
+      font-size: 1rem;
+  }
+}
